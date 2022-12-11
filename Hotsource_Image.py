@@ -233,3 +233,5 @@ image_similarity()
 imagesize()
 red_dot()
 section()
+#yongwan-------------------------
+extractImage()
