@@ -225,3 +225,11 @@ Diff_Image(image1, image2)
 
 #eunha--------------------------
 image_similarity()
+
+
+
+
+#seongsu--------------------------
+imagesize()
+red_dot()
+section()
