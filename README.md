@@ -13,7 +13,7 @@ Find the Wrong Picture Project
 ## Summary    
  The similarity of each image is mainly measured **using the cv2 library** and other parts are extracted.   
  
-### Function   
+### Function_example       
  - Cut_Image_Circle()   
  - Diff_Image()   
  - image_similarity()    
