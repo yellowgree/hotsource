@@ -102,8 +102,6 @@ def image_similarity():
 
 
 #-------------------------function by Seongsu-------------------------
-from skimage.metrics import structural_similarity as compare_ssim
-import imutils
 
 def imagesize():
   imageA = cv2.imread('./image/test1-1.jpg')
