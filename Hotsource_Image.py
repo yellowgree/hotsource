@@ -59,8 +59,13 @@ def Diff_Image(image1, image2):
     cv2.waitKey()
     cv2.destroyAllWindows()
 
+#-------------------------function by eunha-------------------------    
 
-##----------------------main section-------------------------
+#-------------------------function by yushin-------------------------
+
+#-------------------------function by yushin-------------------------
+
+##------------------------main section---------------------------
 
 image = "./image/test_image1.jpg"
 Cut_Image_Circle(image)
