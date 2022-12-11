@@ -19,6 +19,10 @@ Find the Wrong Picture Project
 import cv2
 import numpy as np
 import matplotlib.pylab as plt
+from skimage.metrics import structural_similarity as compare_ssim
+import imutils
+from PIL import Image
+from PIL import ImageChops
 ```
 
 ### How to execute
