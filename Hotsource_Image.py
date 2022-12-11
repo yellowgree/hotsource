@@ -60,6 +60,43 @@ def Diff_Image(image1, image2):
     cv2.destroyAllWindows()
 
 #-------------------------function by eunha-------------------------    
+def image_similarity():
+
+    imgs = []
+    imgs.append(cv2.imread('test1-1.jpg'))
+    imgs.append(cv2.imread('test1-2.jpg'))
+
+    hists = []
+
+    for img in imgs:
+        #BGR 이미지를 HSV 이미지로 변환
+        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        
+        # 히스토그램 연산(파라미터 순서 : 이미지, 채널, Mask, 크기, 범위)
+        hist = cv2.calcHist([hsv], [0, 1], None, [180, 256], [0, 180, 0, 256])
+        
+        # 정규화(파라미터 순서 : 정규화 전 데이터, 정규화 후 데이터, 시작 범위, 끝 범위, 정규화 알고리즘)
+        cv2.normalize(hist, hist, 0, 1, cv2.NORM_MINMAX)
+        
+        # hists 리스트에 저장
+        hists.append(hist)
+
+    method = 'CHISOR'
+    query = hists[0]
+    ret = cv2.compareHist(query, hists[1], method)
+
+    if method == cv2.HISTCMP_INTERSECT:
+        ret = ret/np.sum(query)   
+
+    if ret == 1:
+        return 0
+    else:
+        return 1
+    
+
+        
+
+
 
 #-------------------------function by Yongwan Joo-------------------------
 
@@ -67,10 +104,13 @@ def Diff_Image(image1, image2):
 
 ##------------------------main section---------------------------
 
+#yushin--------------------------
 image = "./image/test_image1.jpg"
 Cut_Image_Circle(image)
-
 
 image1 = "./image/test_image3.jpg"
 image2 = "./image/test_image3.jpg"
 Diff_Image(image1, image2)
+
+#eunha--------------------------
+image_similarity()
